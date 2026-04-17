@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Delivery de Tapioca & Cuscuz</title>
+<title>Batata Da Chef</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -158,8 +158,8 @@ h2 {margin-bottom:12px; font-weight:600; color:#444;}
         <h2>Cardápio</h2>
         <div class="tabs">
             <div class="tab active" data-tab="bebidas">Bebidas</div>
-            <div class="tab" data-tab="tapiocas">Tapiocas</div>
-            <div class="tab" data-tab="cuscuz">Cuscuz</div>
+            <div class="tab" data-tab="Batatas Recheadas">Batata Recheada</div>
+            <div class="tab" data-tab="Batatas Fritas">Batata Frita</div>
             <div class="tab" data-tab="outros">Outros</div>
         </div>
         <div class="products-area" id="products-area"></div>
@@ -177,10 +177,15 @@ h2 {margin-bottom:12px; font-weight:600; color:#444;}
 <script>
 // Produtos com emojis
 const productsData = {
-  bebidas: [{name:"Coca Cola 🥤",price:5.00},{name:"Suco Natural 🍹",price:6.50}],
-  tapiocas: [{name:"Tapioca Queijo 🧀",price:10.00},{name:"Tapioca Presunto 🥓",price:12.00}],
-  cuscuz: [{name:"Cuscuz Simples 🌽",price:7.00}],
-  outros: [{name:"Bolo de Milho 🍰",price:8.00}]
+  bebidas: [{name:"Refrigerante lata🥤",price:7.00},{name:"Refrigerante 1L 🍾",price:11.00}],
+  Batatas: [{name:"Classica de Calabresa Cremosa 🌭",price:23.99},{name:"Frango Cremoso da  Chef 🍗",price:25.99},
+           {name:"Exposao de Bacon Com Cheddar 🥓",price:25.99},{name:"Dupla Perfeita(Frango+Bacon 🍗~🥓",price:26.99},
+           {name:"Carne & Bacon Premium 🥩~🥓",price:26.99},{name:"Calabresa Crocante Especial 🌭",price:25.99},
+           {name:"Suprema da Casa 🍗~🥓~🌭",price:29.99}],
+  Fritas: [{name:"Cuscuz Simples 🌽",price:7.00}],
+  Porções: [{name:"Mussarela Extra 🧀",price:4.00},{name:"Cheddar 🧀",price:4.50},{name:"Catupiry 🥛",price:4.50}
+           {name:"Bacon 🥓",price:5.00},{name:"Calabresa 🥓",price:4.50},{name:"Frango 🍗",price:4.50},
+            {name:"Carne Moida 🥩",price:5.00},{name:"Batata Palha 🍿",price:5.00}]
 };
 
 let cart = [];
@@ -245,7 +250,7 @@ document.getElementById('send-order').addEventListener('click',()=>{
   cart.forEach(it=>{mensagem+=`${it.name} x ${it.qty} - R$ ${(it.price*it.qty).toFixed(2)}%0A`});
   const total=cart.reduce((a,b)=>a+b.price*b.qty,0);
   mensagem+=`Total: R$ ${total.toFixed(2)}`;
-  const numeroWhats="5591987654321"; 
+  const numeroWhats="5579981515981"; 
   window.open(`https://wa.me/${numeroWhats}?text=${mensagem}`,"_blank");
 });
 
